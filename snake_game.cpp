@@ -311,6 +311,7 @@ int main()
     cin >> play;
     if (play == 1)
     {
+        cout<<endl;
         main();
     }
     
