@@ -292,27 +292,27 @@ int main()
 
     Main snakeGame;
     int play = 0;
-    do
+    while (!snakeGame.isGameOver())
     {
-        while (!snakeGame.isGameOver())
-        {
 
-            snakeGame.MainGame(playerName);
-            snakeGame.input();
-            snakeGame.updateGame();
+        snakeGame.MainGame(playerName);
+        snakeGame.input();
+        snakeGame.updateGame();
 
-            #if defined(_WIN32) || defined(_WIN64)
+         #if defined(_WIN32) || defined(_WIN64)
                 Sleep(dif);
-            #else
+        #else
                 usleep(dif * 900);
-            #endif
-        }
-
-        cout << "Do you want to restart the game?" << endl;
-        cout << "Press 1 to start again." << endl;
-        cout << endl;
-        cin >> play;
-
-    } while (play == 1);
+        #endif
+    }
+    cout << "Do you want to restart the game?" << endl;
+    cout << "Press 1 to start again." << endl;
+    cout << endl;
+    cin >> play;
+    if (play == 1)
+    {
+        main();
+    }
+    
     return 0;
 }
