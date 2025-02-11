@@ -285,53 +285,54 @@ int difficulty()
 
 int main()
 {
-    cout<<"\n\n\n";
-    cout<<"W   W  EEEEE  L      CCCCC  OOOOO  M   M  EEEEE     TTTTT  OOOOO\n";
-    cout<<"W   W  E      L     C       O   O  MM MM  E           T    O   O\n";
-    cout<<"W W W  EEEE   L     C       O   O  M M M  EEEE        T    O   O\n";
-    cout<<"WW WW  E      L     C       O   O  M   M  E           T    O   O\n";
-    cout<<"W   W  EEEEE  LLLLL  CCCCC  OOOOO  M   M  EEEEE       T    OOOOO\n\n";  
-    cout<<"   SSSS   N   N   A   K   K  EEEEE      GGGG   A   M   M  EEEEE\n";  
-    cout<<"  S       NN  N  A A  K  K   E         G      A A  MM MM  E\n";     
-    cout<<"   SSS    N N N A A A KKK    EEEE      G  GG A A A M M M  EEEE\n";   
-    cout<<"      S   N  NN A   A K  K   E         G   G A   A M   M  E\n";      
-    cout<<"  SSSS    N   N A   A K   K  EEEEE      GGGG A   A M   M  EEEEE\n\n\n";
-    string playerName;
-    cout << "enter your name: ";
-    cin >> playerName;
-    int dif = difficulty();
-
+    int play = 1;
     Main snakeGame;
-    int play = 0;
-    while (!snakeGame.isGameOver())
+    do
     {
-
-        snakeGame.MainGame(playerName);
-        snakeGame.input();
-        snakeGame.updateGame();
-
-         #if defined(_WIN32) || defined(_WIN64)
-                Sleep(dif);
-        #else
-                usleep(dif * 900);
-        #endif
-    }
-    cout<<"\n\n";
-    cout <<  " GGGG   A   M   M  EEEEE      OOOOO  V   V  EEEEE  RRRR   \n"
-             "G      A A  MM MM  E          O   O  V   V  E      R   R  \n"
-             "G  GG AAAAA M M M  EEEE       O   O  V   V  EEEE   RRRR   \n"
-             "G   G A   A M   M  E          O   O   V V   E      R  R   \n"
-             " GGGG A   A M   M  EEEEE      OOOOO    V    EEEEE  R   R  \n";
-    cout<<"\n\n";
-    cout << "Do you want to restart the game?" << endl;
-    cout << "Press 1 to start again." << endl;
-    cout << endl;
-    cin >> play;
-    if (play == 1)
-    {
-        cout<<endl;
-        main();
-    }
+        cout<<"\n\n\n";
+        cout<<"W   W  EEEEE  L      CCCCC  OOOOO  M   M  EEEEE     TTTTT  OOOOO\n";
+        cout<<"W   W  E      L     C       O   O  MM MM  E           T    O   O\n";
+        cout<<"W W W  EEEE   L     C       O   O  M M M  EEEE        T    O   O\n";
+        cout<<"WW WW  E      L     C       O   O  M   M  E           T    O   O\n";
+        cout<<"W   W  EEEEE  LLLLL  CCCCC  OOOOO  M   M  EEEEE       T    OOOOO\n\n";  
+        cout<<"   SSSS   N   N   A   K   K  EEEEE      GGGG   A   M   M  EEEEE\n";  
+        cout<<"  S       NN  N  A A  K  K   E         G      A A  MM MM  E\n";     
+        cout<<"   SSS    N N N A A A KKK    EEEE      G  GG A A A M M M  EEEE\n";   
+        cout<<"      S   N  NN A   A K  K   E         G   G A   A M   M  E\n";      
+        cout<<"  SSSS    N   N A   A K   K  EEEEE      GGGG A   A M   M  EEEEE\n\n\n";
+        string playerName;
+        cout << "enter your name: ";
+        cin >> playerName;
+        int dif = difficulty();
     
+        
+        while (!snakeGame.isGameOver())
+        {
+    
+            snakeGame.MainGame(playerName);
+            snakeGame.input();
+            snakeGame.updateGame();
+    
+             #if defined(_WIN32) || defined(_WIN64)
+                    Sleep(dif);
+            #else
+                    usleep(dif * 900);
+            #endif
+        }
+        cout<<"\n\n";
+        cout <<  " GGGG   A   M   M  EEEEE      OOOOO  V   V  EEEEE  RRRR   \n"
+                 "G      A A  MM MM  E          O   O  V   V  E      R   R  \n"
+                 "G  GG AAAAA M M M  EEEE       O   O  V   V  EEEE   RRRR   \n"
+                 "G   G A   A M   M  E          O   O   V V   E      R  R   \n"
+                 " GGGG A   A M   M  EEEEE      OOOOO    V    EEEEE  R   R  \n";
+        cout<<"\n\n";
+        cout << "Do you want to restart the game?" << endl;
+        cout << "Press 1 to start again." << endl;
+        cout << endl;
+        cin >> play;
+     
+    } while (play=1);
+    
+      
     return 0;
 }
