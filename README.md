@@ -16,7 +16,7 @@ This is a simple console-based Snake Game implemented in C++. The game allows th
 - `A` - Move Left
 - `D` - Move Right
 - `X` - Exit the Game
-- 'P' - pause the game
+- `P` - pause the game
 
 ## Difficulty Levels
 At the start of the game, you can choose a difficulty level:
@@ -51,7 +51,7 @@ At the start of the game, you can choose a difficulty level:
 5. Eat fruits to gain points and grow longer.
 6. Avoid hitting the walls or yourself.
 7. Press `X` to exit the game.
-8. Press 'P' to pause the game.
+8. Press `P` to pause the game.
 9. After losing, you have the option to restart.
 
 ## Known Issues
