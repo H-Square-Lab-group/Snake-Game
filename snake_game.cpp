@@ -163,7 +163,7 @@ public:
             cout << "-";
         cout << endl;
 
-        cout << playerName << "'s Score: " << score << endl;
+        cout << playerName << "'s Score: " << score << endl<<"Press 'x' to EXIT the game.\nPress 'p' to pause\n";
     }
 
     void updateGame()
@@ -248,6 +248,8 @@ public:
             case 'x':
                 gameIsOver = true;
                 break;
+            case 'p':
+                dir = STOP;
             }
         }
     }
@@ -260,7 +262,7 @@ public:
 int difficulty()
 {
     int dif, choice;
-    cout << "\n SET DIFFICULTY \n 1 : EASY\n 2 : MEDIUM\n 3 : HARD "
+    cout << "\n SET DIFFICULTY \n 1 : EASY\n 2 : MEDIUM\n 3 : HARD\n 4 : Extremly Difficult "
             "\n NOTE : If not chosen any key then difficulty will be automatically set to medium."
             "\n Choose difficulty : ";
 
@@ -269,16 +271,18 @@ int difficulty()
     switch (choice)
     {
     case 1:
-        dif = 100;
+        dif = 150;
         break;
     case 2:
-        dif = 150;
+        dif = 75;
         break;
     case 3:
-        dif = 200;
+        dif = 25;
         break;
+    case 4:
+        dif = 13;    
     default:
-        dif = 150;
+        dif = 50;
     }
     return dif;
 }
@@ -286,9 +290,10 @@ int difficulty()
 int main()
 {
     int play = 1;
-    Main snakeGame;
+    
     do
     {
+        Main snakeGame;
         cout<<"\n\n\n";
         cout<<"W   W  EEEEE  L      CCCCC  OOOOO  M   M  EEEEE     TTTTT  OOOOO\n";
         cout<<"W   W  E      L     C       O   O  MM MM  E           T    O   O\n";
@@ -320,11 +325,11 @@ int main()
             #endif
         }
         cout<<"\n\n";
-        cout <<  " GGGG   A   M   M  EEEEE      OOOOO  V   V  EEEEE  RRRR   \n"
-                 "G      A A  MM MM  E          O   O  V   V  E      R   R  \n"
-                 "G  GG AAAAA M M M  EEEE       O   O  V   V  EEEE   RRRR   \n"
-                 "G   G A   A M   M  E          O   O   V V   E      R  R   \n"
-                 " GGGG A   A M   M  EEEEE      OOOOO    V    EEEEE  R   R  \n";
+        cout <<  "GGGG     A     M   M  EEEEE      OOOOO  V   V  EEEEE  RRRR   \n"
+                "G        A A    MM MM  E          O   O  V   V  E      R   R  \n"
+                "G  GG   AAAAA   M M M  EEEE       O   O  V   V  EEEE   RRRR   \n"
+                "G   G  A     A  M   M  E          O   O   V V   E      R  R   \n"
+                " GGGG A       A M   M  EEEEE      OOOOO    V    EEEEE  R   R  \n";
         cout<<"\n\n";
         cout << "Do you want to restart the game?" << endl;
         cout << "Press 1 to start again." << endl;
